@@ -9,7 +9,7 @@ if [ "$sketch_folder" != "" ]; then
     fi
     docker run -it --rm \
         -v "$sketch_folder":/usr/src/sketch \
-        macroyau/arduino-cli-compile
+        arduino-cli
 else
     echo "Usage: arduino-cli-compile path/to/sketch/folder"
 fi
