@@ -6,7 +6,7 @@ services:
     # Build lively
     # build: .
     volumes:
-      - ~/docker_files/arduino-cli/data:/root/.arduino15
+      - ~/docker_files/arduino-cli/library:/root/.arduino15
       - ~/docker_files/arduino-cli/sketch:/usr/src/sketch
     devices:
       - "/dev/ttyUSB0:/dev/ttyUSB0"
