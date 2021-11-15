@@ -2,12 +2,11 @@ version: "2"
 services:
   arduino-cli:
     container_name: arduino-cli
-    image_name: arduino-cli
     # image: arduino-cli
     # Build lively
     build: .
     volumes:
-      # - ~/docker_files/arduino-cli/library:/root/.arduino15
+      - ~/docker_files/arduino-cli/library:/root/library
       - ~/docker_files/arduino-cli/sketch:/usr/src/sketch
     devices:
       - "/dev/ttyUSB0:/dev/ttyUSB0"
