@@ -10,6 +10,8 @@ if [ "$sketch_folder" != "" ]; then
     docker run -it --rm \
         -v "$sketch_folder":/usr/src/sketch \
         arduino-cli
+
+    docker-compose run arduino-cli bash
 else
     echo "Usage: arduino-cli-compile path/to/sketch/folder"
 fi
