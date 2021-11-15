@@ -8,5 +8,8 @@ RUN arduino-cli core update-index
 RUN pip install --no-cache-dir pyyaml
 COPY compile.py /usr/src/app/
 
+VOLUME /root/.arduino15/
+COPY arduino-cli.yaml /root/.arduino15/arduino-cli.yaml
+
 WORKDIR /usr/src/sketch
 CMD [ "python", "-u", "/usr/src/app/compile.py" ]
