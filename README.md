@@ -9,11 +9,12 @@ compilation tool with per-project core and library dependencies support.
 ## Getting Started
 
 1.  Install [Docker Engine](https://docs.docker.com/install/) on your machine.
-
 2.  Go to your Arduino sketch folder which contains the main `.ino` file.
-
-3.  Create `project.yaml` with the following content:
-
+3.  Build image:
+  ```bash
+  docker build -t arduino-cli .
+  ```
+7.  Create `project.yaml` with the following content:
     ```yaml
     # Filename of the project's main sketch
     sketch: Blink.ino
@@ -35,19 +36,14 @@ compilation tool with per-project core and library dependencies support.
       - Arduino Low Power           # Installs the latest version; or
       # - Arduino Low Power==1.2.1  # Installs v1.2.1
     ```
-
-4.  Download `arduino-cli-compile` to a `PATH` directory and make it executable.
-
-5.  Run `arduino-cli-compile path/to/sketch/folder`.
-
-6.  The compiled binary file will appear in `dist/` inside the sketch folder.
-
-7.  Upload the compiled binary file to your Arduino board. This part is not 
+8.  Download `arduino-cli-compile` to a `PATH` directory and make it executable.
+9.  Run `arduino-cli-compile path/to/sketch/folder`.
+10. The compiled binary file will appear in `dist/` inside the sketch folder.
+11. Upload the compiled binary file to your Arduino board. This part is not 
     (yet) Dockerized. For example, you can use `arduino-cli` installed on your 
     machine connecting to the board:
 
     ```bash
     arduino-cli upload -p /dev/ttyACM0 -b arduino:samd:mkrzero -i path/to/bin/file
     ```
-
-8.  Watch your board blinking!
+12. Watch your board blinking!
