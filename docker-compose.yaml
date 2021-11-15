@@ -2,6 +2,7 @@ version: "2"
 services:
   arduino-cli:
     container_name: arduino-cli
+    image_name: arduino-cli
     # image: arduino-cli
     # Build lively
     build: .
