@@ -12,8 +12,8 @@ COPY arduino-cli.yaml /root/.arduino15/arduino-cli.yaml
 
 WORKDIR /usr/src/sketch
 
-RUN arduino-cli core update-index
-RUN arduino-cli board list
+# RUN arduino-cli core update-index
+# RUN arduino-cli board list
 
 # CMD [ "python", "-u", "/usr/src/app/compile.py" ]
 CMD [ "bash" ]
